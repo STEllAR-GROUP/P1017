@@ -1,0 +1,20 @@
+---
+numbersections: true
+
+references:
+- type: webpage
+  id: Executors16:Issue9
+  author:
+  - family: Kaiser
+    given: Hartmut
+  - family: Hoberock
+    given: Jared
+  issued:
+    date-parts:
+    - - 2016
+      - 8
+      - 26
+  title: 'Execution interfaces should be variadic'
+  URL: https://github.com/executors/issaquah_2016/issues/9
+
+...

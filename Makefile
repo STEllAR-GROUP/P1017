@@ -1,8 +1,12 @@
-.SUFFIXES: .md .html .pdf .docx
+.SUFFIXES: .md .html .pdf .docx .yaml
+
+PANDOC_FLAGS = -f markdown --variable urlcolor=cyan
+
+CITEPROC= --filter pandoc-citeproc --csl=acm-sig-proceedings-long-author-list.csl
 
 %.pdf: %.md; pandoc -o $@ $< --number-sections -H header.tex
 
-%.html: %.md template.html; pandoc -t html5 -o $@ $< --template=template.html --number-sections 
+%.html: %.md %_metadata.yaml template.html; pandoc $(PANDOC_FLAGS) $(CITEPROC) -t html5 -o $@ $< --template=template.html
 
 %.docx: %.md; pandoc -o $@ $< --smart --number-sections
 
